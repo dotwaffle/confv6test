@@ -26,7 +26,8 @@ case $OS in
         /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I >> $log
         /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s >> $log
         echo >> $log
-        sudo tcpdump -v icmp6 >> v6report.txt 2>&1 &
+        interface=$(route get ripe.net | grep interface | cut -f2 -d:)
+        sudo tcpdump -i $interface -v icmp6 >> v6report.txt 2>&1 &
         sleep 80
         sudo kill $!
         echo >> $log
