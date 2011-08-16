@@ -31,12 +31,12 @@ echo >> $log
 traceroute6 ipv6.google.com >> $log 2>&1
 echo >> $log
 
-# What's the v6 connectivity like to LINX's website?
-ping6 -c4 www.linx.net >> $log
+# What's the v6 connectivity like to RIPE's website?
+ping6 -c4 www.ripe.net >> $log
 echo >> $log
 
 # If DNS broken, what's the connectivity like?
-ping6 -c4 2a01:40:5459:1::53 >> $log
+ping6 -c4 2001:67c:2e8:22::c100:68b >> $log
 echo >> $log
 
 # What is the neighbor cache?
